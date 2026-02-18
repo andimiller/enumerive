@@ -73,19 +73,19 @@ val schema = summon[sttp.tapir.Schema[Feature]]
 import net.andimiller.enumerive.tapir.{LabelSchema, given}
 import sttp.tapir.Schema.annotations.description
 
-@description("Available colors")
-enum Color derives LabelSchema:
-  @description("The red color") case Red
-  @description("The green color") case Green
+@description("Available colours")
+enum Colour derives LabelSchema:
+  @description("The red colour") case Red
+  @description("The green colour") case Green
   case Blue
 ```
 
 The resulting schema's `description` will be:
 
 ```
-Available colors
+Available colours
 
-Red: The red color, Green: The green color
+Red: The red colour, Green: The green colour
 ```
 
 Unannotated cases (like `Blue`) are omitted from the description. When no `@description` annotations are present, `schema.description` is `None`.
